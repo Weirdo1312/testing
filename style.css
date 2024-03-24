@@ -1,0 +1,72 @@
+.container {
+    text-align: center;
+}
+
+.main {
+    margin-left: 100px;
+    padding: 20px;
+}
+
+.title  {
+    border: 1px solid;
+    border-image: linear-gradient(#ff0000, #00ff00, #0000ff);
+    border-image-slice: 1;
+    display: inline;
+}
+.content   {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+    text-align: center;
+    color: rgb(50, 50, 50);
+}
+
+body    {
+    background-color: AntiqueWhite;
+    background-repeat:repeat
+}
+
+.sidebar {
+    height: 100%;
+    width: 100px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color: MediumSeaGreen;
+    padding-top: 20px;
+}
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size:75%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.sidebar a:hover {
+    font-size: 100%;
+    transition: all 300ms ease-in-out;
+}
+
+#home:hover {
+    background-size: cover;
+    background-image: url(nerd.gif);
+    background-position: 50%;
+}
+
+#about:hover {
+    background-size: cover;
+    background-image: url(look.gif);
+    background-position: 50%;
+}
+
+#services:hover {
+    background-size: cover;
+    background-image: url(screaming.gif);
+}
+
+#contact:hover {
+    background-size: cover;
+    background-image: url(side-eye.gif);
+    background-position:top 50%
+    
+}
