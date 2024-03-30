@@ -1,19 +1,22 @@
 .container {
     text-align: center;
-}
-
-.main {
-    margin-left: 100px;
-    padding: 20px;
+    padding-top: 10px;
 }
 
 .title  {
-    border: 1px solid;
-    border-image: linear-gradient(#ff0000, #00ff00, #0000ff);
-    border-image-slice: 1;
+    font-size: 450%;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid MediumSeaGreen;
+    border-radius: 10px;
     display: inline;
 }
+
 .content   {
+    padding: 100px;
+    padding-top: 0;
+    font-size: 150%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
     text-align: center;
     color: rgb(50, 50, 50);
@@ -24,49 +27,69 @@ body    {
     background-repeat:repeat
 }
 
+.main   {
+    transition: 200ms all ease;
+}
+
 .sidebar {
     height: 100%;
-    width: 100px;
+    width: 200px;
+    font-size: 250%;
     position:fixed;
     top: 0;
-    left: 0;
     background-color: MediumSeaGreen;
-    padding-top: 20px;
+    padding-top: 50px;
+    left: -200px;
+    transition: 200ms all ease;
 }
+
 .sidebar a {
     display: block;
     color: white;
     padding: 10px 15px;
     text-decoration: none;
-    font-size:75%;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    transition: 200ms all;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
 }
 
-.sidebar a:hover {
-    font-size: 100%;
-    transition: all 300ms ease-in-out;
+#sidebar-toggle {
+    display: none;
 }
 
-#home:hover {
-    background-size: cover;
-    background-image: url(nerd.gif);
-    background-position: 50%;
+.sidebar-toggle-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 9999;
+    padding-left: 5px;
+    user-select: none;
+    transition: 200ms ease all;
 }
 
-#about:hover {
-    background-size: cover;
-    background-image: url(look.gif);
-    background-position: 50%;
+#opened-hamburger-menu  {
+    opacity: 0;
 }
 
-#services:hover {
-    background-size: cover;
-    background-image: url(screaming.gif);
+#sidebar-toggle:checked ~ #opened-hamburger-menu    {
+    color: white;
+    opacity: 1;
 }
 
-#contact:hover {
-    background-size: cover;
-    background-image: url(side-eye.gif);
-    background-position:top 50%
-    
+#sidebar-toggle:checked ~ #closed-hamburger-menu    {
+    opacity: 0;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    left: 0px;
+}
+
+#sidebar-toggle:checked ~ .main {
+    filter: blur(5px);
+    user-select: none;
+}
+
+.sidebar > a:hover {
+    color: rgb(0, 0, 0)
 }
