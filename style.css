@@ -1,22 +1,23 @@
 .container {
     text-align: center;
-    padding-top: 10px;
+    padding: 10px;
 }
 
 .title  {
-    font-size: 450%;
+    font-size: 800%;
     font-weight: bold;
     text-align: center;
-    padding: 5px;
+    padding: 2px;
     border: 2px solid MediumSeaGreen;
     border-radius: 10px;
     display: inline;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .content   {
     padding: 100px;
     padding-top: 0;
-    font-size: 150%;
+    font-size: 250%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
     text-align: center;
     color: rgb(50, 50, 50);
@@ -24,7 +25,6 @@
 
 body    {
     background-color: AntiqueWhite;
-    background-repeat:repeat
 }
 
 .main   {
@@ -32,21 +32,22 @@ body    {
 }
 
 .sidebar {
+    text-align: center;
     height: 100%;
-    width: 200px;
+    width: 40%;
     font-size: 250%;
-    position:fixed;
+    position: fixed;
     top: 0;
     background-color: MediumSeaGreen;
-    padding-top: 50px;
-    left: -200px;
+    padding-top: 250px;
+    left: -40%;
     transition: 200ms all ease;
 }
 
 .sidebar a {
     display: block;
     color: white;
-    padding: 10px 15px;
+    padding: 10%;
     text-decoration: none;
     transition: 200ms all;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
@@ -58,14 +59,14 @@ body    {
 
 .sidebar-toggle-button {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 25px;
+    left: 35px;
     cursor: pointer;
-    font-size: 24px;
     z-index: 9999;
-    padding-left: 5px;
     user-select: none;
     transition: 200ms ease all;
+    font-size: 72px;
+
 }
 
 #opened-hamburger-menu  {
@@ -86,7 +87,7 @@ body    {
 }
 
 #sidebar-toggle:checked ~ .main {
-    filter: blur(5px);
+    filter: blur(10px);
     user-select: none;
 }
 
