@@ -35,7 +35,7 @@ body    {
     text-align: center;
     height: 100%;
     width: 40%;
-    font-size: 250%;
+    font-size: 300%;
     position: fixed;
     top: 0;
     background-color: MediumSeaGreen;
@@ -60,7 +60,7 @@ body    {
 .sidebar-toggle-button {
     position: fixed;
     top: 25px;
-    left: 35px;
+    left: 40px;
     cursor: pointer;
     z-index: 9999;
     user-select: none;
@@ -87,7 +87,7 @@ body    {
 }
 
 #sidebar-toggle:checked ~ .main {
-    filter: blur(10px);
+    filter: blur(4px);
     user-select: none;
 }
 
