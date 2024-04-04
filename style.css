@@ -176,7 +176,8 @@
     }
     
     .sidebar a {
-        display: block;
+        display: flex;
+        justify-content: space-evenly;
         color: white;
         padding: 35px;
         text-decoration: none;
