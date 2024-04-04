@@ -1,8 +1,10 @@
+/*Title Container*/
 .container {
     text-align: center;
     padding-top: 100px;
 }
 
+/*Title Text*/
 .title  {
     font-size: 800%;
     font-weight: bold;
@@ -11,6 +13,7 @@
     display: inline;
 }
 
+/*Actual Content*/
 .content   {
     padding: 100px;
     padding-top: 0;
@@ -18,6 +21,7 @@
     text-align: center;
 }
 
+/*Contains both title and actual content*/
 .main {
     position:absolute;
     color: #323232;
@@ -29,11 +33,11 @@
     height: 200%;
 }
 
+/*Sidebar's Box*/
 .sidebar {
     text-align: center;
     height: 100%;
     width: 70%;
-    font-size: 350%;
     position: fixed;
     top: 0;
     background-color: MediumSeaGreen;
@@ -42,24 +46,28 @@
     transition: 200ms all ease;
 }
 
+/*Sidebar Links*/
 .sidebar a {
     display: block;
     color: white;
+    font-size: 350%;
     padding: 40px;
     text-decoration: none;
     transition: 200ms all;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
+/*Easter Egg*/
 .easter-egg-button  {
     bottom: -450px;
 }
 
+/*Hidden checkbox for sidebar-toggle*/
 #sidebar-toggle {
     display: none;
 }
 
+/*The fancy button button for opening sidebar*/
 .sidebar-toggle-button::before {
     text-align: center;
     content: "☰";
@@ -75,47 +83,51 @@
     font-size: 72px;
 }
 
+/*Executing Anmiation for opening the sidebar*/
 #sidebar-toggle:checked ~ .sidebar-toggle-button::before {
     animation-name: to-x;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
 
+/*Executing Anmiation for closing the sidebar*/
 #sidebar-toggle:not(checked) ~ .sidebar-toggle-button::before {
     animation-name: to-ham;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
 
+/*the sidebar button animations*/
 @keyframes to-ham {
-    from    {
-        content: "✕";
-    }
     to  {
         transform:rotateZ(1turn);
         content: "☰";
     }
 }
-
 @keyframes to-x {
-    from    {
-        content: "☰";
-    }
     to  {
         transform:rotateZ(-1turn);
         content: "✕";
     }
 }
 
+/*Shadow on main content when sidebar is open*/
 #sidebar-toggle:checked ~ .sidebar {
     right: 0px;
     box-shadow: 0px 0px 200px 500px hsla(0, 0%, 0%, 0.732);
 }
 
+/*Hover effect for links in the sidebar*/
 .sidebar > a:hover {
     color: #323232;
 }
 
+/*hidden checkbox for theme-toggle*/
+#theme-toggle   {
+    display: none;
+}
+
+/*fancy button for theme toggle*/
 .theme-toggle-button::before {
     content: "☀️";
     font-size: 81.5px;
@@ -129,65 +141,54 @@
     border-radius: 50%;
     z-index: 9999;
 }
-
-#theme-toggle   {
-    display: none;
-}
-
-#theme-toggle:checked + .theme-toggle-button {
-    background-color: #323232;
-}
-
+/*Animation for theme-toggle button*/
 @keyframes to-moon {
-    from    {
-        content: "☀️";
-    }
+    from    {}
     to  {
         transform:rotateZ(1turn);
         content: "🌑";
     }
 }
-
 @keyframes to-sun {
-    from    {
-        content: "🌑";
-    }
+    from    {}
     to  {
         transform:rotateZ(-1turn);
         content: "☀️";
     }
 }
 
+/*executing theme-toggle animation*/
 #theme-toggle:checked ~ .theme-toggle-button::before {
     animation-name: to-moon;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
-
 #theme-toggle:not(checked) ~ .theme-toggle-button::before {
     animation-name: to-sun;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
 
+/*actual theme change on the main content*/
 #theme-toggle:checked ~ .main {
     background: #051428;
     color: #faebd7;
 }
 
+/*actual theme change on the sidebar*/
 #theme-toggle:checked ~ .sidebar {
     background-color: #102f1e;
 }
 
-#theme-toggle:checked ~ .sidebar-toggle-button {
-    color: white;
-}
-
+/*adjusting easter-egg's size*/
 .easter-egg-button > img  {
     padding-top: 75%;
 }
 
+
+/*optimizations for the desktop*/
 @media (min-width: 1280px)   {
+    /*adjust the theme-toggle size*/
     .theme-toggle-button::before {
         content: "☀️";
         font-size: 225%;
@@ -201,16 +202,17 @@
         z-index: 9999;
     }
 
+    /*disable sidebar's shadow*/
     #sidebar-toggle:checked ~ .sidebar {
         right: 0px;
         box-shadow: 0px 0px 0px 0px hsla(0, 0%, 0%, 0);
     }
 
+    /*make font smaller and always keep the sidebar open*/
     .sidebar {
         text-align: center;
         height: 100%;
         width: 12%;
-        font-size: 150%;
         position: fixed;
         top: 0;
         background-color: MediumSeaGreen;
@@ -218,10 +220,11 @@
         right: 0%;
         transition: 200ms all ease;
     }
-    
+
+    /*make the sidebar links font smaller*/
     .sidebar a {
-        display: flex;
         justify-content: space-evenly;
+        font-size: 150%;
         color: white;
         padding: 35px;
         text-decoration: none;
@@ -230,25 +233,24 @@
         white-space: nowrap;
     }
 
+    /*disable the mobile sidebar toggle*/
     .sidebar-toggle-button  {
         display: none;
     }
 
-    #theme-toggle:checked ~ .main {
-        background: #051428;
-        color: #faebd7;
-    }
-
+    /*adjust easteregg size for desktop*/
     .easter-egg-button > img  {
         max-width: 75%;
         padding-top: 225%;
     }
 
+    /*move the main content to make space for the always open sidebar*/
     .main   {
         padding-top: 0;
         right: 12%;
     }
 
+    /*make title smaller*/
     .title  {
         font-size: 500%;
         font-weight: bold;
@@ -257,6 +259,7 @@
         display: inline;
     }
 
+    /*reduce font size because large text is not needed on the desktop*/
     .content   {
         font-size: 200%;
     }
