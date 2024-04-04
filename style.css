@@ -66,28 +66,46 @@
     font-size: 100%;
     position: absolute;
     top: 2%;
-    left: 2%;
     width: 100px;
     height: 100px;
     background-color: white;
     border-radius: 50%;
-    z-index: 9999;
-}
-
-.sidebar-toggle-button {
-    position: fixed;
-    top: 2%;
     left: 88%;
-    cursor: pointer;
     z-index: 9999;
-    user-select: none;
-    transition: 200ms ease all;
     font-size: 72px;
 }
 
-#sidebar-toggle:checked + .sidebar-toggle-button::before {
-    content: "✕";
-  }
+#sidebar-toggle:checked ~ .sidebar-toggle-button::before {
+    animation-name: to-x;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+#sidebar-toggle:not(checked) ~ .sidebar-toggle-button::before {
+    animation-name: to-ham;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes to-ham {
+    from    {
+        content: "✕";
+    }
+    to  {
+        transform:rotateZ(1turn);
+        content: "☰";
+    }
+}
+
+@keyframes to-x {
+    from    {
+        content: "☰";
+    }
+    to  {
+        transform:rotateZ(-1turn);
+        content: "✕";
+    }
+}
 
 #sidebar-toggle:checked ~ .sidebar {
     right: 0px;
@@ -109,7 +127,6 @@
     height: 100px;
     background-color: white;
     border-radius: 50%;
-    transition: transform 200ms;
     z-index: 9999;
 }
 
@@ -121,9 +138,37 @@
     background-color: #323232;
 }
 
-#theme-toggle:checked + .theme-toggle-button::before {
-    content: "🌑";
-  }
+@keyframes to-moon {
+    from    {
+        content: "☀️";
+    }
+    to  {
+        transform:rotateZ(1turn);
+        content: "🌑";
+    }
+}
+
+@keyframes to-sun {
+    from    {
+        content: "🌑";
+    }
+    to  {
+        transform:rotateZ(-1turn);
+        content: "☀️";
+    }
+}
+
+#theme-toggle:checked ~ .theme-toggle-button::before {
+    animation-name: to-moon;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+#theme-toggle:not(checked) ~ .theme-toggle-button::before {
+    animation-name: to-sun;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
 
 #theme-toggle:checked ~ .main {
     background: #051428;
@@ -153,7 +198,6 @@
         height: 50px;
         background-color: white;
         border-radius: 50%;
-        transition: transform 200ms;
         z-index: 9999;
     }
 
