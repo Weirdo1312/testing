@@ -1,3 +1,8 @@
+/*remove the white border around the screen*/
+body    {
+    margin: 0%;
+}
+
 /*Title Container*/
 .container {
     text-align: center;
@@ -28,8 +33,6 @@
     background-color:#faebd7;
     transition: 200ms all ease;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    margin-top: -1%;
-    margin-left: -1%;
     height: 200%;
 }
 
